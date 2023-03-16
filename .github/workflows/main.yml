@@ -19,4 +19,4 @@ jobs:
       - name: Deploy
         run: scp -r dist/* adminagrila@agriland11971.c42.integrator.host:/home/adminagrila/applications/mailer/
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ssh://adminagrila@agriland11971.c42.integrator.host/home/adminagrila/applications/repositories/mailer/.git
