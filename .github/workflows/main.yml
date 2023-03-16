@@ -11,12 +11,12 @@ jobs:
         node-version: [16.x]
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2.4.4
+        uses: actions/checkout@v2
       - name: Install Dependencies
         run: npm install
       - name: Build
         run: npm run build
       - name: Deploy
-        run: scp -r dist/* adminagrila@agriland11971.c42.integrator.host/home/adminagrila/applications/mailer/
+        run: scp -r dist/* adminagrila@agriland11971.c42.integrator.host:/home/adminagrila/applications/mailer/
         env:
-          SSH_PRIVATE_KEY: ssh://adminagrila@agriland11971.c42.integrator.host/home/adminagrila/applications/mailer/.git
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
